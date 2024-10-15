@@ -1,9 +1,10 @@
 name: Deploy to Railway
 
 on:
-  push:
-    branches:
-      - main  
+  workflow_run:
+    workflows: ["Build and Push Docker Image"]
+    types:
+      - completed
 
 jobs:
   deploy:
