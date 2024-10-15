@@ -41,8 +41,3 @@ def delete_blog(blog_id: UUID):
             return blogs.pop(idx)
     
     raise HTTPException(status_code=404, detail="Blog not found")
-
-
-if __name__ == "__main__":
-
-    uvicorn.run(app, host="0.0.0.0", port=8000)
